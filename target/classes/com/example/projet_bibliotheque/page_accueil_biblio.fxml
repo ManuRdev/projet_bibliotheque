@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet_bibliotheque.ControllerPageaccueil">
+   <top>
+      <AnchorPane prefHeight="103.0" prefWidth="614.0" style="-fx-background-color: #FF8000;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="152.0" layoutY="19.0" prefHeight="66.0" prefWidth="361.0" text="BIBLIOTHEQUE ESIEE-IT" textAlignment="CENTER">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="297.0" prefWidth="600.0" style="-fx-background-color: #F7F8E0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="155.0" prefHeight="42.0" prefWidth="311.0" text="Bienvenue dans la mediathéque de ton université préféré" textFill="#130114">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="modedeconnecte" layoutX="190.0" layoutY="238.0" mnemonicParsing="false" onAction="#actionmodedeconnecte" prefHeight="25.0" prefWidth="242.0" style="-fx-background-color: #FFBF00;" text="Mode déconnecté">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="modeconnecte" layoutX="189.0" layoutY="174.0" mnemonicParsing="false" onAction="#actionmodeconnecte" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #173B0B;" text="Mode Connecté" textFill="#effbfb">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="17.0" layoutY="55.0" prefHeight="43.0" prefWidth="587.0" text="Je t'explique. Pour pouvoir voir tous les livres, il faut que tu te connecte et pour cela il y a deux options.">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="85.0" prefHeight="43.0" prefWidth="600.0" text="Soit le mode connecté: tu as access à la base de donnée de la fac et tu peux importer et exporter en XML.">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="114.0" prefHeight="43.0" prefWidth="594.0" text="Soit le mode déconnecter et tu vas juste pouvoir avoir acces à ton fichier XML ou Word  ou PDF.">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
