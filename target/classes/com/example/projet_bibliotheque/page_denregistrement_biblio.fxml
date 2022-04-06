@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #F7F8E0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pageauthentification.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #F7F8E0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet_bibliotheque.RegisterController">
    <children>
       <AnchorPane layoutY="-8.0" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #FF8000;">
          <children>
             <ImageView fx:id="REGISTERImageView" fitHeight="55.0" fitWidth="43.0" layoutX="90.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Users/aicha/Pictures/REGISTER.jpg" />
+                  <Image url="@REGISTER.jpg" />
                </image>
             </ImageView>
             <Label layoutX="139.0" layoutY="35.0" prefHeight="31.0" prefWidth="237.0" text="CREER UN COMPTE" textAlignment="CENTER">

@@ -14,11 +14,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet_bibliotheque.RegistelivredeconnecterController">
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet_bibliotheque.RegistelivredeconnecterController">
   <children>
-      <AnchorPane layoutX="10.0" layoutY="35.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="61.0" prefWidth="909.0" style="-fx-background-color: #FF8000;">
+      <AnchorPane layoutX="10.0" layoutY="35.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="61.0" prefWidth="700.0" style="-fx-background-color: #FF8000;">
          <children>
-            <Label alignment="BOTTOM_CENTER" layoutX="54.0" layoutY="14.0" prefHeight="24.0" prefWidth="653.0" style="&#10;" text="BIENVENUE DANS LA MEDIATHEQUE ESIEE-IT: Mode connecté" textFill="#121111" wrapText="false">
+            <Label alignment="BOTTOM_CENTER" layoutX="54.0" layoutY="14.0" prefHeight="24.0" prefWidth="653.0" style="&#10;" text="BIENVENUE DANS LA MEDIATHEQUE ESIEE-IT: Local" textFill="#121111" wrapText="false">
                <font>
                   <Font name="Times New Roman Bold" size="18.0" />
                </font>
@@ -29,10 +29,12 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Importer un fichier XML" />
-            <MenuItem mnemonicParsing="false" text="enregistrer en fichier XML" />
-            <MenuItem mnemonicParsing="false" text="Quitter" />
-                  <MenuItem mnemonicParsing="false" text="Revenir page d'accieul" />
+              <MenuItem onAction="#ImportFile" mnemonicParsing="false" text="Importer un fichier XML" />
+              <MenuItem onAction="#SaveFile" mnemonicParsing="false" text="Enregistrer en fichier XML" />
+              <MenuItem mnemonicParsing="false" text="Enregistrer en PDF" />
+              <MenuItem mnemonicParsing="false" text="Enregistrer en WORD" />
+              <MenuItem mnemonicParsing="false" text="Revenir page d'acceuil" />
+              <MenuItem mnemonicParsing="false" text="Quitter" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Aide">
@@ -42,16 +44,16 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="350.0" prefWidth="619.0" style="-fx-background-color: #F7F8E0;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="640.0" prefWidth="1038.0" style="-fx-background-color: #F7F8E0;" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="Tableview" layoutX="336.0" layoutY="-7.0" prefHeight="900.0" prefWidth="752.0">
+            <TableView fx:id="Tableview" layoutX="336.0" layoutY="-7.0" prefHeight="700.0" prefWidth="702.0">
               <columns>
-                <TableColumn fx:id="ColonneTitre" prefWidth="109.33334350585938" text="TITRE" />
-                <TableColumn fx:id="ColonneAuteur" prefWidth="131.0" text="AUTEUR" />
-                  <TableColumn fx:id="ColonnePresentation" prefWidth="160.0" text="PRESENTATION" />
+                <TableColumn fx:id="ColonneTitre" prefWidth="158.66668701171875" text="TITRE" />
+                <TableColumn fx:id="ColonneAuteur" prefWidth="94.6666259765625" text="AUTEUR" />
+                  <TableColumn fx:id="ColonnePresentation" prefWidth="149.3333740234375" text="PRESENTATION" />
                   <TableColumn fx:id="ColonneParution" minWidth="0.0" prefWidth="150.66668701171875" text="PARUTION" />
-                  <TableColumn fx:id="ColonneColonne" prefWidth="100.0" text="COLONNE" />
-                  <TableColumn fx:id="ColonneRangé" prefWidth="99.66668701171875" text="RANGEE" />
+                  <TableColumn fx:id="ColonneColonne" minWidth="0.0" prefWidth="37.33331298828125" text="COLONNE" />
+                  <TableColumn fx:id="ColonneRangé" prefWidth="162.66668701171875" text="RANGEE" />
               </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="89.0" layoutY="36.0" prefHeight="12.0" prefWidth="168.0" text="Informations à remplir">

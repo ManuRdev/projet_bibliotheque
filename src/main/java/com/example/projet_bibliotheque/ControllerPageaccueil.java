@@ -47,7 +47,7 @@ public class ControllerPageaccueil {
                 Parent root =  FXMLLoader.load(getClass().getResource("page_denregistrement_deconnecter_biblio.fxml"));
                 Stage deconnecteStage = new Stage();
                 deconnecteStage.setTitle("INTERFACE BIBLIOTHEQUE: DECONNECTION");
-                deconnecteStage.setScene(new Scene(root, 1100, 900));
+                deconnecteStage.setScene(new Scene(root, 900, 900));
                 deconnecteStage.show();
 
             }catch (Exception e)
