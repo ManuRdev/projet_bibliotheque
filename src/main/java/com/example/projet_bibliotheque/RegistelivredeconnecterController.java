@@ -1,5 +1,7 @@
 package com.example.projet_bibliotheque;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.Font;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +22,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 
 public class RegistelivredeconnecterController implements Initializable {
@@ -82,13 +90,17 @@ public class RegistelivredeconnecterController implements Initializable {
         try {
             JAXBContext jc = JAXBContext.newInstance("com.example.projet_bibliotheque");
             Unmarshaller unmarshaller = jc.createUnmarshaller();
+            fileChooser.getExtensionFilters().clear();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Document (*.xml)", "*.xml"));
             File myfile = fileChooser.showOpenDialog(null);
-            Bibliotheque bibliotheque2 = (Bibliotheque) unmarshaller.unmarshal(myfile);
-            List livres = (List) bibliotheque2.getLivre();
-            for (int i = 0; i < livres.size(); i++) {
-                Bibliotheque.Livre livre = (Bibliotheque.Livre) livres.get(i);
-                ouvragedeconnecter myLivre =new ouvragedeconnecter(livre.getTitre(), livre.getAuteur().getPrenom() + " "+ livre.getAuteur().getNom(), livre.getPresentation() , String.valueOf(livre.getParution()), String.valueOf(livre.getColonne()), String.valueOf(livre.getRangee()));
-                Tableview.getItems().add(myLivre);
+            if(myfile != null){
+                Bibliotheque bibliotheque2 = (Bibliotheque) unmarshaller.unmarshal(myfile);
+                List livres = (List) bibliotheque2.getLivre();
+                for (int i = 0; i < livres.size(); i++) {
+                    Bibliotheque.Livre livre = (Bibliotheque.Livre) livres.get(i);
+                    ouvragedeconnecter myLivre =new ouvragedeconnecter(livre.getTitre(), livre.getAuteur().getPrenom() + " "+ livre.getAuteur().getNom(), livre.getPresentation() , String.valueOf(livre.getParution()), String.valueOf(livre.getColonne()), String.valueOf(livre.getRangee()));
+                    Tableview.getItems().add(myLivre);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,38 +111,69 @@ public class RegistelivredeconnecterController implements Initializable {
     void SaveFile(ActionEvent event){
         try{
             JAXBContext jc = JAXBContext.newInstance("com.example.projet_bibliotheque");
+            fileChooser.getExtensionFilters().clear();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Document (*.xml)", "*.xml"));
             File myfile = fileChooser.showSaveDialog(null);
-            Marshaller marshaller = jc.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            if(myfile != null){
+                Marshaller marshaller = jc.createMarshaller();
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            ObjectFactory factory = new ObjectFactory();
-            Bibliotheque bibliotheque = factory.createBibliotheque();
-            for (int i = 0; i < Tableview.getItems().size(); i++) {
-                Bibliotheque.Livre livre = factory.createBibliothequeLivre();
-                livre.setPresentation(Tableview.getItems().get(i).getPrésentationc());
-                livre.setTitre(Tableview.getItems().get(i).getTitrec());
-                livre.setParution(Integer.parseInt(Tableview.getItems().get(i).getParutionc()));
-                livre.setColonne(Short.parseShort(Tableview.getItems().get(i).getColonnec()));
-                livre.setRangee(Short.parseShort(Tableview.getItems().get(i).getRangéec()));
+                ObjectFactory factory = new ObjectFactory();
+                Bibliotheque bibliotheque = factory.createBibliotheque();
+                for (int i = 0; i < Tableview.getItems().size(); i++) {
+                    Bibliotheque.Livre livre = factory.createBibliothequeLivre();
+                    livre.setPresentation(Tableview.getItems().get(i).getPrésentationc());
+                    livre.setTitre(Tableview.getItems().get(i).getTitrec());
+                    livre.setParution(Integer.parseInt(Tableview.getItems().get(i).getParutionc()));
+                    livre.setColonne(Short.parseShort(Tableview.getItems().get(i).getColonnec()));
+                    livre.setRangee(Short.parseShort(Tableview.getItems().get(i).getRangéec()));
 
-                String[] s =Tableview.getItems().get(i).getAuteurc().split(" ");
+                    String[] s =Tableview.getItems().get(i).getAuteurc().split(" ");
 
-                Bibliotheque.Livre.Auteur auteur = factory
-                        .createBibliothequeLivreAuteur();
-                auteur.setNom(s[1]);
-                auteur.setPrenom(s[0]);
-                livre.setAuteur(auteur);
+                    Bibliotheque.Livre.Auteur auteur = factory
+                            .createBibliothequeLivreAuteur();
+                    auteur.setNom(s[1]);
+                    auteur.setPrenom(s[0]);
+                    livre.setAuteur(auteur);
 
-                bibliotheque.getLivre().add(livre);
+                    bibliotheque.getLivre().add(livre);
+                }
+                marshaller.marshal(bibliotheque, myfile);
             }
 
-
-
-            marshaller.marshal(bibliotheque, myfile);
 
         }
         catch (Exception e){
             e.printStackTrace();
+        }
+
+    }
+    @FXML
+    void SaveToPDF(ActionEvent event) throws FileNotFoundException, DocumentException {
+        fileChooser.getExtensionFilters().clear();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichier PDF (*.PDF)", "*.pdf"));
+        File myfile = fileChooser.showSaveDialog(null);
+        if(myfile != null){
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(myfile.getPath()));
+
+            document.open();
+            Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
+            Chunk chunk = new Chunk("Bibliotech !!!!", font);
+            document.add(chunk);
+
+            for (int i = 0; i < Tableview.getItems().size(); i++) {
+                String chaine = "Titre: " + Tableview.getItems().get(i).getTitrec() +"\n" +
+                        "Présantation: " + Tableview.getItems().get(i).getPrésentationc() +"\n" +
+                        "Auteur: " + Tableview.getItems().get(i).getTitrec() +"\n" +
+                        "Parution: " + Tableview.getItems().get(i).getAuteurc() +"\n" +
+                        "Colonne: " + Tableview.getItems().get(i).getColonnec() +"\n" +
+                        "Rangée: " + Tableview.getItems().get(i).getRangéec() +"\n\n";
+                Paragraph s = new Paragraph(chaine);
+                document.add(s);
+            }
+
+            document.close();
         }
 
     }
@@ -167,8 +210,13 @@ public class RegistelivredeconnecterController implements Initializable {
         if (titreinput.getText().isBlank() == false && auteurinput.getText().isBlank() == false && presentationinput.getText().isBlank() == false  && parutioninput.getText().isBlank() == false  && colonneinput.getText().isBlank() == false && rangéeinput.getText().isBlank() == false) {
                 if (!auteurinput.getText().equals("")) {
                     if (!edit) {
-                        ouvragedeconnecterArrayList.add(new ouvragedeconnecter(auteurinput.getText(), presentationinput.getText(), parutioninput.getText(), colonneinput.getText(), rangéeinput.getText(), titreinput.getText()));
-                        Tableview.setItems(observableList());
+                        Tableview.getItems().add((new ouvragedeconnecter
+                                (       titreinput.getText(),
+                                        auteurinput.getText(),
+                                        presentationinput.getText(),
+                                        parutioninput.getText(),
+                                        colonneinput.getText(),
+                                        rangéeinput.getText())));
                     } else {
                         var i = Seletionerlaligne();
                         var o = Tableview.getItems().get(i);

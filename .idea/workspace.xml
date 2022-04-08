@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="055e5bec-412b-4262-a7fa-0d6ca7b206dc" name="Changes" comment="Lot 1 Xml gestion">
+    <list default="true" id="055e5bec-412b-4262-a7fa-0d6ca7b206dc" name="Changes" comment="gestion des extention et export pdf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivredeconnecterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivredeconnecterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
@@ -84,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649235556809</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gestion des extention et export pdf">
+      <created>1649257085184</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649257085184</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +110,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lot 1 Xml gestion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lot 1 Xml gestion" />
+    <MESSAGE value="gestion des extention et export pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="gestion des extention et export pdf" />
   </component>
 </project>

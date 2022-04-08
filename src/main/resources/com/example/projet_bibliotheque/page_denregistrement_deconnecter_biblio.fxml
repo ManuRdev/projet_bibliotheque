@@ -31,7 +31,7 @@
           <items>
               <MenuItem onAction="#ImportFile" mnemonicParsing="false" text="Importer un fichier XML" />
               <MenuItem onAction="#SaveFile" mnemonicParsing="false" text="Enregistrer en fichier XML" />
-              <MenuItem mnemonicParsing="false" text="Enregistrer en PDF" />
+              <MenuItem onAction="#SaveToPDF" mnemonicParsing="false" text="Enregistrer en PDF" />
               <MenuItem mnemonicParsing="false" text="Enregistrer en WORD" />
               <MenuItem mnemonicParsing="false" text="Revenir page d'acceuil" />
               <MenuItem mnemonicParsing="false" text="Quitter" />

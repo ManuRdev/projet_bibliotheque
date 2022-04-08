@@ -5,6 +5,7 @@ module com.example.projet_bibliotheque {
     requires com.dlsc.formsfx;
     requires java.sql;
     requires java.xml.bind;
+    requires itextpdf;
 
     opens com.example.projet_bibliotheque to javafx.fxml,java.xml.bind;
     exports com.example.projet_bibliotheque;
