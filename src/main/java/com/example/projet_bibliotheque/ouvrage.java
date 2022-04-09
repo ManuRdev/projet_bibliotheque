@@ -5,13 +5,24 @@ public class ouvrage {
     private String auteurc;
     private String présentationc;
     private String parutionc;
-    private Integer colonnec;
-    private Integer rangéec;
+    private String colonnec;
+    private String rangéec;
     private String resumec;
     private String urlc;
     private String etatc;
 
-    public ouvrage(String titrec, String auteurc, String présentationc, String parutionc, Integer colonnec, Integer rangéec, String resumec, String urlc, String etatc) {
+    public ouvrage(String titrec, String auteurc, String présentationc, String parutionc, String colonnec, String rangéec, String resumec, String urlc, String etatc) {
+        this.titrec = titrec;
+        this.auteurc = auteurc;
+        this.présentationc = présentationc;
+        this.parutionc = parutionc;
+        this.colonnec = colonnec;
+        this.rangéec = rangéec;
+        this.resumec = resumec;
+        this.urlc = urlc;
+        this.etatc = etatc;
+    }
+    public ouvrage(String titrec, String auteurc, String présentationc, String parutionc, String colonnec, String rangéec) {
         this.titrec = titrec;
         this.auteurc = auteurc;
         this.présentationc = présentationc;
@@ -39,11 +50,11 @@ public class ouvrage {
         return parutionc;
     }
 
-    public Integer getColonnec() {
+    public String getColonnec() {
         return colonnec;
     }
 
-    public Integer getRangéec() {
+    public String getRangéec() {
         return rangéec;
     }
 
@@ -75,11 +86,11 @@ public class ouvrage {
         this.parutionc = parutionc;
     }
 
-    public void setColonnec(Integer colonnec) {
+    public void setColonnec(String colonnec) {
         this.colonnec = colonnec;
     }
 
-    public void setRangéec(Integer rangéec) {
+    public void setRangéec(String rangéec) {
         this.rangéec = rangéec;
     }
 

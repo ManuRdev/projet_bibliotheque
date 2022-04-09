@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="055e5bec-412b-4262-a7fa-0d6ca7b206dc" name="Changes" comment="gestion des extention et export pdf">
+    <list default="true" id="055e5bec-412b-4262-a7fa-0d6ca7b206dc" name="Changes" comment="Petite correction mode local">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_17.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/ControllerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivredeconnecterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivredeconnecterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque/page_denregistrement_deconnecter_biblio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque/page_denregistrement_deconnecter_biblio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/ouvrage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/ouvrage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque/page_bibliothe_biblio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque/page_bibliothe_biblio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegistelivreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegistelivreController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegistelivredeconnecterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegistelivredeconnecterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/page_denregistrement_deconnecter_biblio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/page_denregistrement_deconnecter_biblio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/page_bibliothe_biblio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projet_bibliotheque/page_bibliothe_biblio.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +47,17 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/projet_bibliotheque" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.projet_bibliotheque" />
     </key>
@@ -92,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649257085184</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Petite correction mode local">
+      <created>1649407745801</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649407745801</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +131,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lot 1 Xml gestion" />
     <MESSAGE value="gestion des extention et export pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="gestion des extention et export pdf" />
+    <MESSAGE value="Petite correction mode local" />
+    <option name="LAST_COMMIT_MESSAGE" value="Petite correction mode local" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projet_bibliotheque/RegistelivreController.java</url>
+          <line>417</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

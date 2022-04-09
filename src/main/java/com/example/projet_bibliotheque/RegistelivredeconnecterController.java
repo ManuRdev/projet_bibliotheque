@@ -140,14 +140,12 @@ public class RegistelivredeconnecterController implements Initializable {
                 }
                 marshaller.marshal(bibliotheque, myfile);
             }
-
-
         }
         catch (Exception e){
             e.printStackTrace();
         }
-
     }
+    // Fonction d'export
     @FXML
     void SaveToPDF(ActionEvent event) throws FileNotFoundException, DocumentException {
         fileChooser.getExtensionFilters().clear();

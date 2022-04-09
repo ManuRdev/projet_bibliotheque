@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -40,10 +41,10 @@ public class ControllerLogin implements Initializable {
     void actionseconnecter(ActionEvent event) {
 
         if(mailinput.getText().isBlank() == false && motdepasseinput.getText().isBlank() == false){
-        Loginvalider();
+            Loginvalider();
         }
         else{
-         messageerreuridentifiantincorets.setText("Veillez entrer vos identifiants");
+            messageerreuridentifiantincorets.setText("Veillez entrer vos identifiants");
         }
     }
 
@@ -58,13 +59,15 @@ public class ControllerLogin implements Initializable {
     }
 
     public void Loginvalider(){
-        databaseconnection connectNow = new databaseconnection();
-        Connection  connectDB = connectNow.getConnection();
+        //databaseconnection connectNow = new databaseconnection();
+        //Connection ConnectDB = DriverManager.getConnection("jdbc:mysql://localhost:3306/aichaexemple", "root", "tonedorette1");
+        //Connection  ConnectDB = connectNow.getConnection();
 
         String verifyLogin ="SELECT count(1) FROM utilisateur_aicha WHERE MAIL = '" + mailinput.getText() + "' AND MOT_DE_PASSE ='" + motdepasseinput.getText() +"'";
 
         try{
-            Statement statement = connectDB.createStatement();
+            Connection ConnectDB = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aichaexemple?serverTimezone=UTC", "root", "root1234");
+            Statement statement = ConnectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
 
             while(queryResult.next()){
